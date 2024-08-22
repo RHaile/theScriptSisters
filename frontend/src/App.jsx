@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+import Header from "./components/Header";
+import Guide from "./components/Guide";
+import Recipes from "./components/Recipes";
+import Footer from "./components/Footer";
 
 function App() {
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:3000/api");
-    console.log(response.data.fruits);
-  };
-  useEffect(() => {
-    fetchAPI();
-  }, []);
 
-  return <div>Hello World</div>;
+  return <div>
+    <Header/>
+    <Guide/>
+    <Recipes/>
+    <Footer/>
+  </div>;
 }
 
+
 export default App;
+ 
