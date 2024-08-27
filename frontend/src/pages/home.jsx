@@ -1,5 +1,3 @@
-import React from "react";
-import '../../css/home.css';
 
 function Home() {
   return (
@@ -17,4 +15,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home; 

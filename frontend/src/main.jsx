@@ -6,7 +6,7 @@ import Login from "./pages/login";
 import MyPlants from "./pages/myPlants";
 import PlantSearch from "./pages/plantSearch";
 import SignUp from "./pages/signUp";
-
+import "./index.css"
 const router = createBrowserRouter([
   {
     path: "/",
