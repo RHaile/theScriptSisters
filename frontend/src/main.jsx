@@ -6,6 +6,7 @@ import Login from "./pages/login";
 import MyPlants from "./pages/myPlants";
 import PlantSearch from "./pages/PlantSearch";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./index.css"
 
 const router = createBrowserRouter([
@@ -32,10 +33,14 @@ const router = createBrowserRouter([
 ])
 ;
 
+
+
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
      <Navbar />
     <RouterProvider router={router} />
+    <Footer />
   </StrictMode>
 );
 

@@ -26,12 +26,12 @@ function Navbar() {
         </button>
 
         {isOpen && (
-          <div className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box w-52">
+          <div className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box w-22">
             <ul className="menu menu-compact">
               <li><a href="/">Home</a></li>
               <li><a href="/login">Login / Signup</a></li>
-              <li><a href="/myplants">My Plants</a></li>
               <li><a href="/plantsearch">Plant Search</a></li>
+              <li><a href="/myplants">Favorite Plants</a></li>
             </ul>
           </div>
         )}
