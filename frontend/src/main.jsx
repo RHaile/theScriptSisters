@@ -5,7 +5,6 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import MyPlants from "./pages/myPlants";
 import PlantSearch from "./pages/PlantSearch";
-import SignUp from "./pages/signUp";
 import Navbar from "./components/Navbar";
 import "./index.css"
 
@@ -28,11 +27,6 @@ const router = createBrowserRouter([
   {
     path: "/plantsearch",
     element: <PlantSearch />,
-    errorElement: <div>Oops ! There was an error.</div>,
-  },
-  {
-    path: "/signup",
-    element: <SignUp />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
 ])
