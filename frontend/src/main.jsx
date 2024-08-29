@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import Signup from "./pages/Signup";
 import MyPlants from "./pages/myPlants";
 import PlantSearch from "./pages/PlantSearch";
 import Navbar from "./components/Navbar";
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
   {
     path: "/plantsearch",
     element: <PlantSearch />,
+    errorElement: <div>Oops ! There was an error.</div>,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
 ])
