@@ -31,7 +31,7 @@ function Navbar() {
               <li><a href="/">Home</a></li>
               <li><a href="/login">Login / Signup</a></li>
               <li><a href="/plantsearch">Plant Search</a></li>
-              <li><a href="/myplants">Favorite Plants</a></li>
+              <li><a href="/myplants">My Plants</a></li>
             </ul>
           </div>
         )}

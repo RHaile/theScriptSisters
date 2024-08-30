@@ -3,8 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import Home from "./pages/home";
 import Login from "./pages/login";
-import Signup from "./pages/Signup";
-import MyPlants from "./pages/myPlants";
+import MyPlants from "./pages/MyPlants";
 import PlantSearch from "./pages/PlantSearch";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -22,12 +21,12 @@ const router = createBrowserRouter([
     errorElement: <div>Oops ! There was an error.</div>,
   },
   {
-    path: "/myplants",
+    path: "/MyPlants",
     element: <MyPlants />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
   {
-    path: "/plantsearch",
+    path: "/PlantSearch",
     element: <PlantSearch />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
