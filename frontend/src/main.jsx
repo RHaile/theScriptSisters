@@ -30,6 +30,11 @@ const router = createBrowserRouter([
     element: <PlantSearch />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
+  {
+    path: "/signup",
+    element: <Signup />,
+    errorElement: <div>Oops ! There was an error.</div>,
+  },
 ])
 ;
 
