@@ -3,9 +3,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import Home from "./pages/home";
 import Login from "./pages/login";
-import MyPlants from "./pages/myPlants";
-import PlantSearch from "./pages/plantSearch";
-import SignUp from "./pages/signUp";
+import MyPlants from "./pages/MyPlants";
+import PlantSearch from "./pages/PlantSearch";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import "./index.css"
 
 const router = createBrowserRouter([
   {
@@ -19,24 +21,31 @@ const router = createBrowserRouter([
     errorElement: <div>Oops ! There was an error.</div>,
   },
   {
-    path: "/myplants",
+    path: "/MyPlants",
     element: <MyPlants />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
   {
-    path: "/plantsearch",
+    path: "/PlantSearch",
     element: <PlantSearch />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
   {
     path: "/signup",
-    element: <SignUp />,
+    element: <Signup />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
-]);
+])
+;
+
+
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+     <Navbar />
     <RouterProvider router={router} />
+    <Footer />
   </StrictMode>
 );
+
