@@ -1,13 +1,14 @@
-import React, { StrictMode } from "react";
+import {StrictMode} from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import Signup from "./pages/signUp";
 import MyPlants from "./pages/MyPlants";
-import PlantSearch from "./pages/PlantSearch";
+import PlantSearch from "./pages/plantSearch";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import "./index.css"
+import Footer from "./components/footer";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
