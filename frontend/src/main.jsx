@@ -9,7 +9,7 @@ import PlantSearch from "./pages/plantSearch";
 import Recipes from "./pages/recipes"; // Import Recipes page
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
-import Signup from "./pages/Signup";
+
 
 import "./index.css";
 
