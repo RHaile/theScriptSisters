@@ -7,6 +7,8 @@ import MyPlants from "./pages/MyPlants";
 import PlantSearch from "./pages/PlantSearch";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Signup from "./pages/Signup";
+
 import "./index.css"
 
 const router = createBrowserRouter([
