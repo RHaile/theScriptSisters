@@ -1,9 +1,8 @@
-
 const myPlants = () => {
   return (
     <div className="container mx-auto p-4">
     <h1 className="text-4xl font-bold mb-4 text-center">My Plants</h1>
-    <h2 className="text-2xl mb-6 text-center">Here are the plants you've marked as favorites:</h2>
+    <h2 className="text-2xl mb-6 text-center">Here are the plants you have marked as favorites:</h2>
   
       <div className="carousel carousel-end rounded-box">
   <div className="carousel-item">
