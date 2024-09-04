@@ -32,6 +32,7 @@ function Navbar() {
               <li><a href="/login">Login / Signup</a></li>
               <li><a href="/plantsearch">Plant Search</a></li>
               <li><a href="/myplants">My Plants</a></li>
+              <li><a href="/recipes">Recipes</a></li> {/* New Link */}
             </ul>
           </div>
         )}
