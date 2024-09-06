@@ -17,8 +17,8 @@ function Recipes() {
   };
 
   const handleGetRecipes = () => {
-    // Placeholder for recipe generation logic
-    // In a real application, this would likely involve an API call
+   
+    
     const generatedRecipes = [
       `Delicious ${ingredientsList.join(' and ')} Salad`,
       `${ingredientsList.join(', ')} Stir Fry`,
@@ -111,6 +111,7 @@ function Recipes() {
         </div>
       )}
     </div>
+
   );
 }
 

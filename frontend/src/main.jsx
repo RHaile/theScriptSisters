@@ -3,14 +3,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import Home from "./pages/home";
 import Login from "./pages/login";
-import Signup from "./pages/signup"; // Ensure the case matches the filename
+import Signup from "./pages/signup";
 import MyPlants from "./pages/myPlants";
 import PlantSearch from "./pages/plantSearch";
-import Recipes from "./pages/recipes"; // Import Recipes page
+import Recipes from "./pages/recipes";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
-
-
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -40,7 +38,7 @@ const router = createBrowserRouter([
     errorElement: <div>Oops! There was an error.</div>,
   },
   {
-    path: "/recipes", // Add Recipes route
+    path: "/recipes", 
     element: <Recipes />,
     errorElement: <div>Oops! There was an error.</div>,
   },

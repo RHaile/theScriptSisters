@@ -1,43 +1,49 @@
 import { useState } from 'react';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // State to track dropdown open/close
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-none">
-        <button
-          className="btn btn-square btn-ghost"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block h-5 w-5 stroke-current"
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div 
+            tabIndex={0} 
+            role="button" 
+            className="btn btn-ghost btn-circle"
+            onClick={toggleDropdown}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+          </div>
 
-        {isOpen && (
-          <div className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box w-22">
-            <ul className="menu menu-compact">
+          {isOpen && (
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
               <li><a href="/">Home</a></li>
               <li><a href="/login">Login / Signup</a></li>
               <li><a href="/plantsearch">Plant Search</a></li>
               <li><a href="/myplants">My Plants</a></li>
-              <li><a href="/recipes">Recipes</a></li> {/* New Link */}
+              <li><a href="/recipes">Recipes</a></li>
             </ul>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-      <div className="flex-none"></div>
     </div>
   );
 }
