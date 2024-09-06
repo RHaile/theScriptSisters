@@ -11,14 +11,13 @@ function Login() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    // Retrieve the user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if (storedUser && storedUser.email === email && storedUser.password === password) {
-      // If credentials match, navigate to the plant search page
+     
       navigate('/plantsearch');
     } else {
-      // If credentials don't match, set an error message
+      
       setError('Invalid email or password');
     }
   };
