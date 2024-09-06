@@ -9,6 +9,7 @@ import PlantSearch from "./pages/plantSearch";
 import Recipes from "./pages/recipes";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
+import CommunityGarden from "./pages/communityGarden";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
   {
     path: "/recipes", 
     element: <Recipes />,
+    errorElement: <div>Oops! There was an error.</div>,
+  },
+  {
+    path: "/community-garden",
+    element: <CommunityGarden />,
     errorElement: <div>Oops! There was an error.</div>,
   },
 ]);

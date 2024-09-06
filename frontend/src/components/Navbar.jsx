@@ -40,6 +40,8 @@ function Navbar() {
               <li><a href="/plantsearch">Plant Search</a></li>
               <li><a href="/myplants">My Plants</a></li>
               <li><a href="/recipes">Recipes</a></li>
+              <li><a href="/communitygarden">Community Garden</a></li>
+
             </ul>
           )}
         </div>
