@@ -1,14 +1,14 @@
 import { StrictMode } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/signup";
-import MyPlants from "./pages/myPlants";
+import Home from "./pages/home";
+import Login from "./pages/login";
+import Signup from "./pages/Signup";
+import MyPlants from "./pages/MyPlants";
 import PlantSearch from "./pages/plantSearch";
-import Recipes from "./pages/recipes";
+import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import CommunityGarden from "./pages/CommunityGarden";
 import "./index.css";
 
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     errorElement: <div>Oops! There was an error.</div>,
   },
   {
-    path: "/recipes", 
+    path: "/recipes",
     element: <Recipes />,
     errorElement: <div>Oops! There was an error.</div>,
   },
@@ -49,7 +49,6 @@ const router = createBrowserRouter([
     errorElement: <div>Oops! There was an error.</div>,
   },
 ]);
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Navbar />
