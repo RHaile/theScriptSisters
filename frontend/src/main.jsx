@@ -1,15 +1,15 @@
 import { StrictMode } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import Home from "./pages/home";
-import Login from "./pages/login";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Signup from "./pages/signup";
 import MyPlants from "./pages/myPlants";
 import PlantSearch from "./pages/plantSearch";
 import Recipes from "./pages/recipes";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
-import CommunityGarden from "./pages/communityGarden";
+import CommunityGarden from "./pages/CommunityGarden";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     errorElement: <div>Oops! There was an error.</div>,
   },
   {
-    path: "/community-garden",
+    path: "/communitygarden",
     element: <CommunityGarden />,
     errorElement: <div>Oops! There was an error.</div>,
   },
