@@ -4,10 +4,10 @@ import { createRoot } from "react-dom/client";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import MyPlants from "./pages/MyPlants";
-import PlantSearch from "./pages/PlantSearch";
+import PlantSearch from "./pages/plantSearch";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import "./index.css"
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -35,14 +35,11 @@ const router = createBrowserRouter([
     element: <Signup />,
     errorElement: <div>Oops ! There was an error.</div>,
   },
-])
-;
-
+]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-     <Navbar />
+    <Navbar />
     <RouterProvider router={router} />
     <Footer />
   </StrictMode>
 );
-
