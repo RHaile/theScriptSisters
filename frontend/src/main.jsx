@@ -10,6 +10,7 @@ import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CommunityGarden from "./pages/CommunityGarden";
+import { AuthProvider } from "./context/AuthContext";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -51,8 +52,12 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Navbar />
-    <RouterProvider router={router} />
-    <Footer />
+    <AuthProvider>
+      <Navbar />
+      <RouterProvider router={router} />
+      <Footer />
+
+    </AuthProvider>
+
   </StrictMode>
 );
