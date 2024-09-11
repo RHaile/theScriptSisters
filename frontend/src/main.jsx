@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CommunityGarden from "./pages/CommunityGarden";
 import { AuthProvider } from "./context/AuthContext";
+import PrivateRoute from "./components/PrivateRoute.";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -25,39 +26,54 @@ const router = createBrowserRouter([
     errorElement: <div>Oops! There was an error.</div>,
   },
   {
-    path: "/myplants",
-    element: <MyPlants />,
-    errorElement: <div>Oops! There was an error.</div>,
-  },
-  {
-    path: "/plantsearch",
-    element: <PlantSearch />,
-    errorElement: <div>Oops! There was an error.</div>,
-  },
-  {
     path: "/signup",
     element: <Signup />,
     errorElement: <div>Oops! There was an error.</div>,
   },
   {
+    path: "/myplants",
+    element: (
+      <PrivateRoute>
+        <MyPlants />
+      </PrivateRoute>
+    ),
+    errorElement: <div>Oops! There was an error.</div>,
+  },
+  {
+    path: "/plantsearch",
+    element: (
+      <PrivateRoute>
+        <PlantSearch />
+      </PrivateRoute>
+    ),
+    errorElement: <div>Oops! There was an error.</div>,
+  },
+  {
     path: "/recipes",
-    element: <Recipes />,
+    element: (
+      <PrivateRoute>
+        <Recipes />
+      </PrivateRoute>
+    ),
     errorElement: <div>Oops! There was an error.</div>,
   },
   {
     path: "/communitygarden",
-    element: <CommunityGarden />,
+    element: (
+      <PrivateRoute>
+        <CommunityGarden />
+      </PrivateRoute>
+    ),
     errorElement: <div>Oops! There was an error.</div>,
   },
 ]);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <Navbar />
       <RouterProvider router={router} />
       <Footer />
-
     </AuthProvider>
-
   </StrictMode>
 );

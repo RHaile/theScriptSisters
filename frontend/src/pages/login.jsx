@@ -1,24 +1,32 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import { useContext } from 'react';
+import axios from 'axios';
 
 function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
-
-  const handleSubmit = (e) => {
+  const { login } = useContext(AuthContext);
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const storedUser = JSON.parse(localStorage.getItem('user'));
+    try {
 
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
-     
+      const response = await axios.post('http://localhost:3000/users/login', {
+        email,
+        password
+      });
+
+      console.log(response.data);
+      login(response.data);
       navigate('/plantsearch');
-    } else {
-      
+    } catch (error) {
       setError('Invalid email or password');
+      console.error(error);
     }
   };
 
@@ -43,7 +51,7 @@ function Login() {
                 type="email"
                 required
                 autoComplete="email"
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -66,7 +74,7 @@ function Login() {
                 type="password"
                 required
                 autoComplete="current-password"
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>

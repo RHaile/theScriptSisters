@@ -36,7 +36,9 @@ router.post('/signup', async (req, res) => {
             email
         });
         await newUser.save();
-        res.status(201).json({ message: 'User created successfully!' });
+        const newUserWithoutPassword = { ...newUser._doc }
+        delete newUserWithoutPassword.password;
+        res.status(201).json(newUserWithoutPassword);
     } catch (error) {
         res.status(400).json({ error: 'Signup failed', details: error });
     }
