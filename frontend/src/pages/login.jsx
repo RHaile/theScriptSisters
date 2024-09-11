@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { useContext } from 'react';
 import axios from 'axios';
 
 function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const { login } = useContext(AuthContext);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -15,18 +15,17 @@ function Login() {
     const password = e.target.password.value;
 
     try {
-
       const response = await axios.post('http://localhost:3000/users/login', {
         email,
         password
       });
 
-      console.log(response.data);
+      console.log('Login response:', response.data);
       login(response.data);
       navigate('/plantsearch');
     } catch (error) {
       setError('Invalid email or password');
-      console.error(error);
+      console.error('Login error:', error);
     }
   };
 

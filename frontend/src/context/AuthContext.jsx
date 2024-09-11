@@ -5,7 +5,7 @@ export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-
+    const [loading, setLoading] = useState(true);
 
     const login = (userInfo) => {
         setUser(userInfo);
@@ -20,12 +20,16 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
+            console.log('User found in localStorage:', JSON.parse(storedUser));
             setUser(JSON.parse(storedUser));
+        } else {
+            console.log('No user found in localStorage');
         }
+        setLoading(false);
     }, []);
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, login, logout, loading }}>
             {children}
         </AuthContext.Provider>
     );
