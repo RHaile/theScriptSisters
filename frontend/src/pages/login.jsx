@@ -21,7 +21,7 @@ function Login() {
       });
 
       console.log('Login response:', response.data);
-      login(response.data);
+      login(response.data.user);
       navigate('/plantsearch');
     } catch (error) {
       setError('Invalid email or password');

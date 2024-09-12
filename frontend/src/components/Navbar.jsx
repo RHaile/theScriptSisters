@@ -61,7 +61,7 @@ function Navbar() {
         </div>
       </div>
       <div className="navbar-end">
-        {user && <span>Welcome, {user.username}!</span>}  {/* Show username if logged in */}
+        {user && <span>Welcome, {user.username}!</span>}
       </div>
     </div>
   );
