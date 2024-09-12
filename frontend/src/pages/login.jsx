@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,14 +11,16 @@ function Login() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const storedUser = JSON.parse(localStorage.getItem('user'));
+    const storedUser = JSON.parse(localStorage.getItem("user"));
 
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
-     
-      navigate('/plantsearch');
+    if (
+      storedUser &&
+      storedUser.email === email &&
+      storedUser.password === password
+    ) {
+      navigate("/plantsearch");
     } else {
-      
-      setError('Invalid email or password');
+      setError("Invalid email or password");
     }
   };
 
@@ -33,7 +35,10 @@ function Login() {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium leading-6 text-gray-900"
+            >
               Email address
             </label>
             <div className="mt-2">
@@ -50,11 +55,17 @@ function Login() {
 
           <div>
             <div className="flex items-center justify-between">
-              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Password
               </label>
               <div className="text-sm">
-                <a href="#" className="font-semibold text-primary hover:text-white">
+                <a
+                  href="#"
+                  className="font-semibold text-primary hover:text-white"
+                >
                   Forgot password?
                 </a>
               </div>
@@ -84,8 +95,11 @@ function Login() {
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member?{' '}
-          <Link to="/signup" className="font-semibold leading-6 text-primary hover:text-white">
+          Not a member?{" "}
+          <Link
+            to="/signup"
+            className="font-semibold leading-6 text-primary hover:text-white"
+          >
             Join Seed Circle Today!
           </Link>
         </p>
