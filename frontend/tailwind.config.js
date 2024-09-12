@@ -7,10 +7,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        bodoni: ['"Bodoni Moda SC"', 'serif'],
+      },
+    },
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["retro"], 
+    themes: ["retro"],
   }
 }
