@@ -91,8 +91,11 @@ function Login() {
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member?{' '}
-          <Link to="/signup" className="font-semibold leading-6 text-primary hover:text-white">
+          Not a member?{" "}
+          <Link
+            to="/signup"
+            className="font-semibold leading-6 text-primary hover:text-white"
+          >
             Join Seed Circle Today!
           </Link>
         </p>

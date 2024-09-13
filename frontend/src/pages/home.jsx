@@ -14,6 +14,7 @@ function Home() {
       style={{
         backgroundImage: `url(${homeImage})`,
       }}>
+
       <div className="hero-overlay bg-opacity-55"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
@@ -22,8 +23,6 @@ function Home() {
             From Seed to Plate: Discover, Grow, Enjoy.
           </h2>
           <button className="btn btn-accent glass" onClick={handleGetStarted}>Get Started</button>
-        
-
 
         </div>
       </div>
