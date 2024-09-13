@@ -1,25 +1,35 @@
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 function Signup() {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const username = e.target.name.value;
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      const confirmPassword = e.target['confirm-password'].value;
 
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const confirmPassword = e.target['confirm-password'].value;
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
 
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
+      const response = await axios.post('http://localhost:3000/users/signup', {
+        username,
+        password,
+        email
+      });
+      console.log(response.data)
+      navigate('/login');
+    } catch (error) {
+      alert("Signup failed!! Try again.")
+      console.error(error);
     }
 
-    const userData = { name, email, password };
-    localStorage.setItem('user', JSON.stringify(userData));
-
-    navigate('/login');
   };
 
   return (

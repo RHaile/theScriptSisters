@@ -1,4 +1,5 @@
 // import libraries
+require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -10,6 +11,7 @@ const plantRouter = require("./routes/plant-router");
 const corsOptions = {
   origin: ["http://localhost:5173"],
 };
+
 // connect client-side
 app.use(cors(corsOptions));
 
@@ -20,9 +22,6 @@ app.use(express.json());
 app.use("/users", userRouter);
 app.use("/plants", plantRouter);
 
-// DB connection reference
-const uri =
-  "mongodb+srv://haileruta:love94@users.wijnp.mongodb.net/?retryWrites=true&w=majority&appName=Users";
 const clientOptions = {
   serverApi: { version: "1", strict: true, deprecationErrors: true },
 };
@@ -31,7 +30,7 @@ const clientOptions = {
 async function connectDb() {
   try {
     // create a Mongoose client
-    await mongoose.connect(uri, clientOptions);
+    await mongoose.connect(process.env.MONGO_CONNECTION_STRING, clientOptions);
     console.log("SIS it's connected!");
   } catch (error) {
     // close if error
@@ -44,4 +43,4 @@ async function connectDb() {
 app.listen(PORT, async () => {
   await connectDb().catch(console.dir);
   console.log(`Server started at: http://localhost:${PORT}`);
-});
+}); 
