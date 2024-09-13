@@ -2,18 +2,37 @@ import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import axios from 'axios';
 
 function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const { login } = useContext(AuthContext);
+  const [error, setError] = useState('');
+  const { login } = useContext(AuthContext);
 
+  const handleSubmit = async (e) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    try {
+      const response = await axios.post('http://localhost:3000/users/login', {
+        email,
+        password
+      });
+
+      console.log('Login response:', response.data);
+      login(response.data.user);
+      navigate('/plantsearch');
+    } catch (error) {
+      setError('Invalid email or password');
+      console.error('Login error:', error);
     try {
       const response = await axios.post('http://localhost:3000/users/login', {
         email,
@@ -54,6 +73,7 @@ function Login() {
                 required
                 autoComplete="email"
                 className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -68,6 +88,7 @@ function Login() {
               </label>
               <div className="text-sm">
                 <a href="#" className="font-semibold text-primary hover:text-white">
+                <a href="#" className="font-semibold text-primary hover:text-white">
                   Forgot password?
                 </a>
               </div>
@@ -79,6 +100,7 @@ function Login() {
                 type="password"
                 required
                 autoComplete="current-password"
+                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>

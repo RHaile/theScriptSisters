@@ -11,6 +11,9 @@ import CommunityGarden from "./pages/CommunityGarden";
 import { AuthProvider } from "./context/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import Layout from "./components/Layout";
+import { AuthProvider } from "./context/AuthContext";
+import PrivateRoute from "./components/PrivateRoute";
+import Layout from "./components/Layout";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -28,6 +31,7 @@ const router = createBrowserRouter([
     ]
   }
 ]);
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
