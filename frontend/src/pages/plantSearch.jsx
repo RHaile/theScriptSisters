@@ -32,7 +32,7 @@ function PlantSearch() {
 
         // Extract the "id" of the filtered results
         const plantIds = filteredPlants.map((plant) => plant.id);
-        console.log(plantIds)
+        console.log(plantIds);
         // Use Promise.all to make all second API calls in parallel
         const plantDetails = await Promise.all(
           plantIds.map(async (id) => {
@@ -60,8 +60,8 @@ function PlantSearch() {
     <div className="flex flex-col items-center justify-center h-screen bg-base-200">
       <h1 className="text-4xl font-bold mb-4">Get to know your plant</h1>
       <p className="text-lg mb-8">
-        Enter your plants name below and unlock expert advice tailored
-        to your plants specific needs.
+        Enter your plants name below and unlock expert advice tailored to your
+        plants specific needs.
       </p>
 
       <div className="flex items-center space-x-2">
@@ -70,8 +70,8 @@ function PlantSearch() {
           placeholder="Enter plant here"
           className="input input-bordered w-full max-w-xs"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} 
-          style={{ fontSize: '1.17rem' }}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ fontSize: "1.17rem" }}
         />
         <button className="btn btn-active btn-secondary" onClick={handleSearch}>
           Search

@@ -1,4 +1,5 @@
 import React from "react";
+import Favorite from "./Favorite";
 
 function PlantCard({ plant, onDetailsClick }) {
   return (
@@ -10,7 +11,10 @@ function PlantCard({ plant, onDetailsClick }) {
         alt={plant.common_name}
         className="w-full h-40 object-cover rounded-t-lg mb-4"
       />
-      <h2 className="font-bold text-xl mb-2">{plant.common_name}</h2>
+      <div className="flex justify-between items-center">
+        <h2 className="font-bold text-xl mb-2">{plant.common_name}</h2>
+        <Favorite />
+      </div>
       <p className="text-gray-700 italic">{plant.scientific_name}</p>
       <button
         className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"

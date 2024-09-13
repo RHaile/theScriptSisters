@@ -1,4 +1,5 @@
 import React from "react";
+import Favorite from "./Favorite";
 
 function PlantModal({ plant, onClose }) {
   return (
@@ -10,7 +11,10 @@ function PlantModal({ plant, onClose }) {
         >
           &times;
         </button>
-        <h2 className="font-bold text-2xl mb-4">{plant.common_name}</h2>
+        <div className="flex justify-between items-center">
+          <h2 className="font-bold text-2xl mb-4">{plant.common_name}</h2>
+          <Favorite />
+        </div>
         <img
           src={
             plant.default_image?.regular_url ||
