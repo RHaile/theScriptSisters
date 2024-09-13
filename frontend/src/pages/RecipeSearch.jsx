@@ -72,10 +72,10 @@ function RecipeSearch() {
         Fresh From Your Garden To Your Plate
       </h1>
       <center>
-        <p>
-          Enter the fruits, vegetables and herbs you've <br />
-          harvested, and we'll suggest delicious <br />
-          recipes based on your ingredients.
+        <p className="mb-6">
+          Enter the fruits, vegetables and herbs you have <br />
+          harvested, and we will suggest delicious <br />
+          recipes based on your ingredients!
         </p>
       </center>
 
@@ -85,11 +85,11 @@ function RecipeSearch() {
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
           placeholder="Enter a fruit or vegetable"
-          className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          className="block w-full rounded-md border-0 p-1.5 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
         />
         <button
           onClick={handleAddIngredient}
-          className="mt-2 w-full rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-900"
+          className="mt-2 w-full rounded-md bg-primary px-3 py-1.5 text-md font-semibold leading-6 text-white shadow-sm hover:bg-green-700"
         >
           Add Ingredient
         </button>
@@ -105,7 +105,7 @@ function RecipeSearch() {
                   <span>{item}</span>
                   <button
                     onClick={() => handleRemoveIngredient(index)}
-                    className="text-red-500 hover:text-red-700"
+                    className="text-primary hover:text-red-700"
                   >
                     Remove
                   </button>
@@ -117,7 +117,7 @@ function RecipeSearch() {
           <div className="mb-4 w-full max-w-md">
             <button
               onClick={handleGetRecipes}
-              className="w-full rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-900"
+              className="w-full rounded-md bg-primary px-3 py-1.5 text-md font-semibold leading-6 text-white shadow-sm hover:bg-green-700"
             >
               Get Recipes
             </button>
@@ -153,7 +153,7 @@ function RecipeSearch() {
         <div className="mt-6 w-full max-w-md">
           <button
             onClick={handleRemoveAll}
-            className="w-full rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-700"
+            className="w-full rounded-md bg-green-200 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-700"
           >
             Remove All
           </button>

@@ -60,19 +60,20 @@ function PlantSearch() {
     <div className="flex flex-col items-center justify-center h-screen bg-base-200">
       <h1 className="text-4xl font-bold mb-4">Get to know your plant</h1>
       <p className="text-lg mb-8">
-        Simply enter your plant’s name below and unlock expert advice tailored
-        to your plant's specific needs.
+        Enter your plants name below and unlock expert advice tailored
+        to your plants specific needs.
       </p>
 
       <div className="flex items-center space-x-2">
         <input
           type="text"
-          placeholder="Type here"
+          placeholder="Enter plant here"
           className="input input-bordered w-full max-w-xs"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // Update state when input changes
+          onChange={(e) => setSearchTerm(e.target.value)} 
+          style={{ fontSize: '1.17rem' }}
         />
-        <button className="btn btn-active btn-primary" onClick={handleSearch}>
+        <button className="btn btn-active btn-secondary" onClick={handleSearch}>
           Search
         </button>
       </div>
