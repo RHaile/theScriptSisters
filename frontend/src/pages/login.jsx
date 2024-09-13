@@ -1,26 +1,31 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import axios from 'axios';
 
 function Login() {
   const navigate = useNavigate();
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
+  const { login } = useContext(AuthContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    try {
+      const response = await axios.post('http://localhost:3000/users/login', {
+        email,
+        password
+      });
 
-    if (
-      storedUser &&
-      storedUser.email === email &&
-      storedUser.password === password
-    ) {
-      navigate("/plantsearch");
-    } else {
-      setError("Invalid email or password");
+      console.log('Login response:', response.data);
+      login(response.data.user);
+      navigate('/plantsearch');
+    } catch (error) {
+      setError('Invalid email or password');
+      console.error('Login error:', error);
     }
   };
 
@@ -35,10 +40,14 @@ function Login() {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
+<<<<<<< HEAD
             <label
               htmlFor="email"
               className="block text-md font-medium leading-6 text-gray-900"
             >
+=======
+            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+>>>>>>> a14c24e739b4f3ee5bca9281ad03b1cfd69fe9b3
               Email address
             </label>
             <div className="mt-2">
@@ -48,24 +57,25 @@ function Login() {
                 type="email"
                 required
                 autoComplete="email"
-                className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
 
           <div>
             <div className="flex items-center justify-between">
+<<<<<<< HEAD
               <label
                 htmlFor="password"
                 className="block text-md font-medium leading-6 text-gray-900"
               >
+=======
+              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+>>>>>>> a14c24e739b4f3ee5bca9281ad03b1cfd69fe9b3
                 Password
               </label>
               <div className="text-sm">
-                <a
-                  href="#"
-                  className="font-semibold text-primary hover:text-white"
-                >
+                <a href="#" className="font-semibold text-primary hover:text-white">
                   Forgot password?
                 </a>
               </div>
@@ -77,7 +87,7 @@ function Login() {
                 type="password"
                 required
                 autoComplete="current-password"
-                className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>

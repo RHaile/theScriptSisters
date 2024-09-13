@@ -32,7 +32,7 @@ function PlantSearch() {
 
         // Extract the "id" of the filtered results
         const plantIds = filteredPlants.map((plant) => plant.id);
-
+        console.log(plantIds)
         // Use Promise.all to make all second API calls in parallel
         const plantDetails = await Promise.all(
           plantIds.map(async (id) => {
