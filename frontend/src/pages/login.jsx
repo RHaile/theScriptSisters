@@ -40,14 +40,10 @@ function Login() {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-<<<<<<< HEAD
             <label
               htmlFor="email"
               className="block text-md font-medium leading-6 text-gray-900"
             >
-=======
-            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
->>>>>>> a14c24e739b4f3ee5bca9281ad03b1cfd69fe9b3
               Email address
             </label>
             <div className="mt-2">
@@ -64,14 +60,10 @@ function Login() {
 
           <div>
             <div className="flex items-center justify-between">
-<<<<<<< HEAD
               <label
                 htmlFor="password"
                 className="block text-md font-medium leading-6 text-gray-900"
               >
-=======
-              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
->>>>>>> a14c24e739b4f3ee5bca9281ad03b1cfd69fe9b3
                 Password
               </label>
               <div className="text-sm">

@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import MyPlants from "./pages/MyPlants";
 import PlantSearch from "./pages/plantSearch";
-import Recipes from "./pages/Recipes";
+import Recipes from "./pages/RecipeSearch";
 import CommunityGarden from "./pages/CommunityGarden";
 import { AuthProvider } from "./context/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";

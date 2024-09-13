@@ -40,6 +40,7 @@ function CommunityGarden() {
         className="input input-bordered w-full max-w-xs mb-4"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
+        style={{ fontSize: '1.17rem' }}
       />
       <button className="btn btn-secondary mb-8" onClick={handleSearch}>Search</button>
 

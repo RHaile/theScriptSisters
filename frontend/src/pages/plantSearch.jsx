@@ -70,7 +70,8 @@ function PlantSearch() {
           placeholder="Enter plant here"
           className="input input-bordered w-full max-w-xs"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // Update state when input changes
+          onChange={(e) => setSearchTerm(e.target.value)} 
+          style={{ fontSize: '1.17rem' }}
         />
         <button className="btn btn-active btn-secondary" onClick={handleSearch}>
           Search
