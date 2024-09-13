@@ -37,7 +37,7 @@ function Login() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium leading-6 text-gray-900"
+              className="block text-md font-medium leading-6 text-gray-900"
             >
               Email address
             </label>
@@ -57,7 +57,7 @@ function Login() {
             <div className="flex items-center justify-between">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-md font-medium leading-6 text-gray-900"
               >
                 Password
               </label>
@@ -85,9 +85,9 @@ function Login() {
           <div>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-md font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign in
+              Sign In
             </button>
           </div>
 

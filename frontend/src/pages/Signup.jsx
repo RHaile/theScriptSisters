@@ -33,7 +33,7 @@ function Signup() {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+            <label htmlFor="name" className="block text-md font-medium leading-6 text-gray-900">
               Name
             </label>
             <div className="mt-2">
@@ -49,8 +49,8 @@ function Signup() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-              Email address
+            <label htmlFor="email" className="block text-md font-medium leading-6 text-gray-900">
+              Email Address
             </label>
             <div className="mt-2">
               <input
@@ -65,7 +65,7 @@ function Signup() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+            <label htmlFor="password" className="block text-md font-medium leading-6 text-gray-900">
               Password
             </label>
             <div className="mt-2">
@@ -81,7 +81,7 @@ function Signup() {
           </div>
 
           <div>
-            <label htmlFor="confirm-password" className="block text-sm font-medium leading-6 text-gray-900">
+            <label htmlFor="confirm-password" className="block text-md font-medium leading-6 text-gray-900">
               Confirm Password
             </label>
             <div className="mt-2">
@@ -99,9 +99,9 @@ function Signup() {
           <div>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-md font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign up
+              Sign Up
             </button>
           </div>
         </form>

@@ -41,7 +41,7 @@ function CommunityGarden() {
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
       />
-      <button className="btn btn-primary mb-8" onClick={handleSearch}>Search</button>
+      <button className="btn btn-secondary mb-8" onClick={handleSearch}>Search</button>
 
       <div>
         {gardens.length > 0 ? (
@@ -57,13 +57,13 @@ function CommunityGarden() {
         )}
       </div>
 
-      <div className="mt-8">
-        <p className="text-sm mb-2">Would You Like To Start Your Own Garden?</p>
+      <div className="mt-12">
+        <p className="text-sm mb-2 text-center">Would You Like To Start Your Own Garden?</p>
         <a
           href="https://cuyahoga.osu.edu/sites/cuyahoga/files/imce/Misc_Files/ANR/Start%20Up%20Guide%20-%20Dig%20In.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-red-500">
+          className="text-green-200 text-center">
           Click Here For The Start-Up Guide
         </a>
       </div>
